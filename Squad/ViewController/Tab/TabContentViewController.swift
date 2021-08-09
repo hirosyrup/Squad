@@ -8,27 +8,28 @@
 import Cocoa
 
 class TabContentViewController: NSViewController {
-
-    private var rightClickMenu: NSMenu!
+    private var initialUrl: URL!
     
-    class func create() -> TabContentViewController {
+    class func create(initialUrl: URL, title: String) -> TabContentViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("TabContentViewController")
-        return storyboard.instantiateController(withIdentifier: identifier) as! TabContentViewController
+        let vc = storyboard.instantiateController(withIdentifier: identifier) as! TabContentViewController
+        vc.initialUrl = initialUrl
+        vc.title = title
+        return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        rightClickMenu = CreateRigntClickMenu.menu(
+    }
+    
+    override func rightMouseDown(with event: NSEvent) {
+        let rightClickMenu = CreateRigntClickMenu.menu(
             preferenceAction: #selector(onSelectPreferences(_:)),
             backAction: #selector(onSelectBack(_:)),
             fowardAction: #selector(onSelectForward(_:)),
             reloadAction: #selector(onSelectReload(_:))
         )
-    }
-    
-    override func rightMouseDown(with event: NSEvent) {
         NSMenu.popUpContextMenu(rightClickMenu, with: event, for: view)
     }
     

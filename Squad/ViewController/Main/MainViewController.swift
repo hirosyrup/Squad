@@ -17,6 +17,9 @@ class MainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // TDOO: To Preferences
+        view.frame = CGRect(x: 0, y: 0, width: 3000, height: 2000)
     }
 }
 

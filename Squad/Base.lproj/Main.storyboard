@@ -29,14 +29,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="hQw-Fd-Gy6">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="292"/>
                                 <connections>
                                     <segue destination="PlA-dA-yJp" kind="embed" id="OSU-17-lg3"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="hQw-Fd-Gy6" firstAttribute="top" secondItem="2tM-Ih-JOS" secondAttribute="top" id="qD3-T8-jKI"/>
+                            <constraint firstItem="hQw-Fd-Gy6" firstAttribute="top" secondItem="2tM-Ih-JOS" secondAttribute="top" constant="8" id="qD3-T8-jKI"/>
                             <constraint firstItem="hQw-Fd-Gy6" firstAttribute="leading" secondItem="2tM-Ih-JOS" secondAttribute="leading" id="qQA-xf-myT"/>
                             <constraint firstAttribute="bottom" secondItem="hQw-Fd-Gy6" secondAttribute="bottom" id="yoi-El-Jp3"/>
                             <constraint firstAttribute="trailing" secondItem="hQw-Fd-Gy6" secondAttribute="trailing" id="zEz-c0-dTZ"/>
