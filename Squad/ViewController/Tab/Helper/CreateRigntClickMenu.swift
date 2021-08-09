@@ -9,17 +9,10 @@ import Cocoa
 
 class CreateRigntClickMenu {
     class func menu(
-        preferenceAction: Selector,
-        backAction: Selector,
-        fowardAction: Selector,
-        reloadAction: Selector
+        preferenceAction: Selector
     ) -> NSMenu {
         let rightClickMenu = NSMenu(title: "right click menu")
         rightClickMenu.addItem(NSMenuItem(title: "Preferences", action: preferenceAction, keyEquivalent: ""))
-        rightClickMenu.addItem(NSMenuItem.separator())
-        rightClickMenu.addItem(NSMenuItem(title: "Back", action: backAction, keyEquivalent: ""))
-        rightClickMenu.addItem(NSMenuItem(title: "Forward", action: fowardAction, keyEquivalent: ""))
-        rightClickMenu.addItem(NSMenuItem(title: "Reload", action: reloadAction, keyEquivalent: ""))
         return rightClickMenu
     }
 }

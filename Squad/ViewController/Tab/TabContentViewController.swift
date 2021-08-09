@@ -9,6 +9,8 @@ import Cocoa
 
 class TabContentViewController: NSViewController {
     private var initialUrl: URL!
+    private var webView: WebView?
+    private var rightClickMenu: NSMenu!
     
     class func create(initialUrl: URL, title: String) -> TabContentViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -21,31 +23,24 @@ class TabContentViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rightClickMenu = CreateRigntClickMenu.menu(
+            preferenceAction: #selector(onSelectPreferences(_:))
+        )
     }
     
-    override func rightMouseDown(with event: NSEvent) {
-        let rightClickMenu = CreateRigntClickMenu.menu(
-            preferenceAction: #selector(onSelectPreferences(_:)),
-            backAction: #selector(onSelectBack(_:)),
-            fowardAction: #selector(onSelectForward(_:)),
-            reloadAction: #selector(onSelectReload(_:))
-        )
-        NSMenu.popUpContextMenu(rightClickMenu, with: event, for: view)
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        if webView == nil {
+            webView = WebView(frame: view.bounds)
+            webView?.customMenu = rightClickMenu
+            view.addSubview(webView!)
+            webView?.load(URLRequest(url: initialUrl))
+        }
     }
     
     @objc func onSelectPreferences(_ sender: Any?) {
-        
-    }
-    
-    @objc func onSelectBack(_ sender: Any?) {
-        
-    }
-    
-    @objc func onSelectForward(_ sender: Any?) {
-        
-    }
-    
-    @objc func onSelectReload(_ sender: Any?) {
         
     }
 }

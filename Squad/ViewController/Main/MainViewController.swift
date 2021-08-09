@@ -19,7 +19,7 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
         
         // TDOO: To Preferences
-        view.frame = CGRect(x: 0, y: 0, width: 3000, height: 2000)
+        view.frame = CGRect(x: 0, y: 0, width: 1000, height: 500)
     }
 }
 
