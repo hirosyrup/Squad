@@ -11,6 +11,9 @@
 		FB0D44B426C00A7500224267 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0D44B326C00A7500224267 /* MainViewController.swift */; };
 		FB0D44B626C00A7600224267 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB0D44B526C00A7600224267 /* Assets.xcassets */; };
 		FB0D44B926C00A7600224267 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB0D44B726C00A7600224267 /* Main.storyboard */; };
+		FB0D44C626C1656800224267 /* CreateRigntClickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0D44C526C1656800224267 /* CreateRigntClickMenu.swift */; };
+		FB0D44CB26C16D8000224267 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0D44CA26C16D8000224267 /* TabViewController.swift */; };
+		FB0D44CD26C16DA400224267 /* TabContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0D44CC26C16DA400224267 /* TabContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		FB0D44B826C00A7600224267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB0D44BA26C00A7600224267 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB0D44BB26C00A7600224267 /* Squad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Squad.entitlements; sourceTree = "<group>"; };
+		FB0D44C526C1656800224267 /* CreateRigntClickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRigntClickMenu.swift; sourceTree = "<group>"; };
+		FB0D44CA26C16D8000224267 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		FB0D44CC26C16DA400224267 /* TabContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +72,36 @@
 		FB0D44C126C00E3100224267 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FB0D44B326C00A7500224267 /* MainViewController.swift */,
+				FB0D44C926C16D2E00224267 /* Tab */,
+				FB0D44C726C165BE00224267 /* Main */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FB0D44C726C165BE00224267 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D44B326C00A7500224267 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FB0D44C826C165C900224267 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D44C526C1656800224267 /* CreateRigntClickMenu.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FB0D44C926C16D2E00224267 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D44C826C165C900224267 /* Helper */,
+				FB0D44CA26C16D8000224267 /* TabViewController.swift */,
+				FB0D44CC26C16DA400224267 /* TabContentViewController.swift */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0D44CB26C16D8000224267 /* TabViewController.swift in Sources */,
+				FB0D44C626C1656800224267 /* CreateRigntClickMenu.swift in Sources */,
 				FB0D44B426C00A7500224267 /* MainViewController.swift in Sources */,
+				FB0D44CD26C16DA400224267 /* TabContentViewController.swift in Sources */,
 				FB0D44B226C00A7500224267 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,6 @@
 import Cocoa
 
 class MainViewController: NSViewController {
-
     class func create() -> MainViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("MainViewController")
@@ -18,8 +17,6 @@ class MainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }
 

@@ -27,11 +27,58 @@
                     <view key="view" id="2tM-Ih-JOS">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="hQw-Fd-Gy6">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <connections>
+                                    <segue destination="PlA-dA-yJp" kind="embed" id="OSU-17-lg3"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hQw-Fd-Gy6" firstAttribute="top" secondItem="2tM-Ih-JOS" secondAttribute="top" id="qD3-T8-jKI"/>
+                            <constraint firstItem="hQw-Fd-Gy6" firstAttribute="leading" secondItem="2tM-Ih-JOS" secondAttribute="leading" id="qQA-xf-myT"/>
+                            <constraint firstAttribute="bottom" secondItem="hQw-Fd-Gy6" secondAttribute="bottom" id="yoi-El-Jp3"/>
+                            <constraint firstAttribute="trailing" secondItem="hQw-Fd-Gy6" secondAttribute="trailing" id="zEz-c0-dTZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="4YR-KB-SSJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="94" y="234"/>
+        </scene>
+        <!--Tab Content View Controller-->
+        <scene sceneID="uNi-rc-2OE">
+            <objects>
+                <viewController storyboardIdentifier="TabContentViewController" id="OBp-HJ-SQq" customClass="TabContentViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="koU-he-bbX">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="vqs-lW-VbM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="607"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="tCE-2c-gda">
+            <objects>
+                <tabViewController id="PlA-dA-yJp" customClass="TabViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabView key="tabView" type="noTabsNoBorder" id="Pcr-eZ-r1w">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="PlA-dA-yJp" id="xDx-cx-a0u"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="Pcr-eZ-r1w" id="RTe-h5-wlE"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="daJ-ni-CZj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="603" y="234"/>
         </scene>
     </scenes>
 </document>
