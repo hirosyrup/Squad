@@ -9,6 +9,9 @@ import Cocoa
 import WebKit
 
 class TabContentViewController: NSViewController, WKUIDelegate {
+    @IBOutlet weak var contentView: NSView!
+    @IBOutlet weak var progressBar: NSProgressIndicator!
+    
     private var initialUrl: URL!
     private var webView: WebView?
     private var rightClickMenu: NSMenu!
@@ -30,17 +33,36 @@ class TabContentViewController: NSViewController, WKUIDelegate {
         )
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
+    override func viewDidAppear() {
+        super.viewDidAppear()
         
         if webView == nil {
-            webView = WebView(frame: view.bounds)
-            webView?.uiDelegate = self
-            webView?.customMenu = rightClickMenu
-            webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15"
-            view.addSubview(webView!)
-            webView?.load(URLRequest(url: initialUrl))
+            addWebView()
         }
+    }
+    
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        
+        removeWebView()
+    }
+    
+    func addWebView() {
+        webView = WebView(frame: contentView.bounds)
+        webView?.uiDelegate = self
+        webView?.customMenu = rightClickMenu
+        webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15"
+        webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: .new, context: nil)
+        webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        contentView.addSubview(webView!)
+        webView?.load(URLRequest(url: initialUrl))
+    }
+    
+    func removeWebView() {
+        webView?.removeObserver(self, forKeyPath: #keyPath(WKWebView.isLoading))
+        webView?.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
+        webView?.removeFromSuperview()
+        webView = nil
     }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
@@ -50,6 +72,26 @@ class TabContentViewController: NSViewController, WKUIDelegate {
         }
         webView.load(navigationAction.request)
         return nil
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+        guard let keyPath = keyPath, let _webView = webView else {
+            return
+        }
+
+        switch keyPath {
+        case #keyPath(WKWebView.isLoading), #keyPath(WKWebView.estimatedProgress):
+            if _webView.isLoading {
+                progressBar.isHidden = false
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.progressBar.animator().isHidden = true
+                }
+            }
+            progressBar.doubleValue = Double(_webView.estimatedProgress)
+        default:
+            break
+        }
     }
 
     @objc func onSelectPreferences(_ sender: Any?) {

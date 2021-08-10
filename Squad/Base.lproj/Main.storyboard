@@ -54,7 +54,31 @@
                     <view key="view" id="koU-he-bbX">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <progressIndicator maxValue="1" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-jg-liQ">
+                                <rect key="frame" x="0.0" y="294" width="450" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="Ut5-Lh-bD9"/>
+                                </constraints>
+                            </progressIndicator>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="PTH-54-27J">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="294"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wUZ-jg-liQ" firstAttribute="leading" secondItem="koU-he-bbX" secondAttribute="leading" id="58H-8o-gnN"/>
+                            <constraint firstAttribute="trailing" secondItem="wUZ-jg-liQ" secondAttribute="trailing" id="9Fa-EL-s5U"/>
+                            <constraint firstItem="PTH-54-27J" firstAttribute="top" secondItem="wUZ-jg-liQ" secondAttribute="bottom" id="GCc-WO-C0g"/>
+                            <constraint firstItem="PTH-54-27J" firstAttribute="leading" secondItem="koU-he-bbX" secondAttribute="leading" id="RDg-gG-9lZ"/>
+                            <constraint firstAttribute="bottom" secondItem="PTH-54-27J" secondAttribute="bottom" id="o2f-Ex-csW"/>
+                            <constraint firstAttribute="trailing" secondItem="PTH-54-27J" secondAttribute="trailing" id="yWz-jw-xJI"/>
+                            <constraint firstItem="wUZ-jg-liQ" firstAttribute="top" secondItem="koU-he-bbX" secondAttribute="top" id="zsQ-zr-kqe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="PTH-54-27J" id="srx-sH-Xu0"/>
+                        <outlet property="progressBar" destination="wUZ-jg-liQ" id="hFb-da-ND1"/>
+                    </connections>
                 </viewController>
                 <customObject id="vqs-lW-VbM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
