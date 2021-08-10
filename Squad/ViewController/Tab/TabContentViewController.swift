@@ -6,8 +6,9 @@
 //
 
 import Cocoa
+import WebKit
 
-class TabContentViewController: NSViewController {
+class TabContentViewController: NSViewController, WKUIDelegate {
     private var initialUrl: URL!
     private var webView: WebView?
     private var rightClickMenu: NSMenu!
@@ -34,12 +35,23 @@ class TabContentViewController: NSViewController {
         
         if webView == nil {
             webView = WebView(frame: view.bounds)
+            webView?.uiDelegate = self
             webView?.customMenu = rightClickMenu
+            webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15"
             view.addSubview(webView!)
             webView?.load(URLRequest(url: initialUrl))
         }
     }
     
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if let frame = navigationAction.targetFrame,
+            frame.isMainFrame {
+            return nil
+        }
+        webView.load(navigationAction.request)
+        return nil
+    }
+
     @objc func onSelectPreferences(_ sender: Any?) {
         
     }
