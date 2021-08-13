@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="94" y="234"/>
         </scene>
-        <!--Tab Content View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="uNi-rc-2OE">
             <objects>
-                <viewController storyboardIdentifier="TabContentViewController" id="OBp-HJ-SQq" customClass="TabContentViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="OBp-HJ-SQq" customClass="WebViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="koU-he-bbX">
                         <rect key="frame" x="0.0" y="0.0" width="856" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

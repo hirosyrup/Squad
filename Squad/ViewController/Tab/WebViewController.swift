@@ -1,5 +1,5 @@
 //
-//  TabContentViewController.swift
+//  WebViewController.swift
 //  Squad
 //
 //  Created by 岩井 宏晃 on 2021/08/09.
@@ -8,7 +8,7 @@
 import Cocoa
 import WebKit
 
-class TabContentViewController: NSViewController, WKUIDelegate {
+class WebViewController: NSViewController, WKUIDelegate {
     @IBOutlet weak var contentView: NSView!
     @IBOutlet weak var progressBar: NSProgressIndicator!
     
@@ -16,10 +16,10 @@ class TabContentViewController: NSViewController, WKUIDelegate {
     private var webView: WebView?
     private var rightClickMenu: NSMenu!
     
-    class func create(initialUrl: URL, title: String) -> TabContentViewController {
+    class func create(initialUrl: URL, title: String) -> WebViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier("TabContentViewController")
-        let vc = storyboard.instantiateController(withIdentifier: identifier) as! TabContentViewController
+        let identifier = NSStoryboard.SceneIdentifier("WebViewController")
+        let vc = storyboard.instantiateController(withIdentifier: identifier) as! WebViewController
         vc.initialUrl = initialUrl
         vc.title = title
         return vc

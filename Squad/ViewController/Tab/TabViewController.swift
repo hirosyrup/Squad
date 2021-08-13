@@ -12,6 +12,6 @@ class TabViewController: NSTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addChild(TabContentViewController.create(initialUrl: URL(string: "https://www.google.co.jp/")!, title: "Test"))
+        addChild(WebViewController.create(initialUrl: URL(string: "https://www.google.co.jp/")!, title: "Test"))
     }
 }
