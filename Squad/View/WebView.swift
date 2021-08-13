@@ -53,6 +53,9 @@ class WebView: WKWebView {
                 // a
                 case 0:
                     NSApp.sendAction(#selector(NSResponder.selectAll(_:)), to: nil, from: self)
+                // w
+                case 13:
+                    window?.close()
                 default:
                     super.keyDown(with: event)
                 }

@@ -25,6 +25,11 @@ class WebViewController: NSViewController, WKUIDelegate {
         return vc
     }
     
+    func setupFromWindow(initialUrl: URL, title: String) {
+        self.initialUrl = initialUrl
+        self.title = title
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +59,7 @@ class WebViewController: NSViewController, WKUIDelegate {
         webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15"
         webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: .new, context: nil)
         webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        webView?.autoresizingMask = [.height, .width]
         contentView.addSubview(webView!)
         webView?.load(URLRequest(url: initialUrl))
     }
@@ -70,7 +76,8 @@ class WebViewController: NSViewController, WKUIDelegate {
             frame.isMainFrame {
             return nil
         }
-        webView.load(navigationAction.request)
+        let wc = WebWindowController.create(initialUrl: navigationAction.request.url!)
+        wc.showWindow(self)
         return nil
     }
     

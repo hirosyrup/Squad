@@ -47,6 +47,31 @@
             </objects>
             <point key="canvasLocation" x="94" y="234"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="7S8-dR-0Hb">
+            <objects>
+                <windowController storyboardIdentifier="WebWindowController" id="Nlw-zI-Wzq" customClass="WebWindowController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="bVg-ob-FwR">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="239" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+                        <view key="contentView" id="dYO-cX-b7Z">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="Nlw-zI-Wzq" id="EOm-hW-N7H"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="OBp-HJ-SQq" kind="relationship" relationship="window.shadowedContentViewController" id="jb5-y3-iGJ"/>
+                    </connections>
+                </windowController>
+                <customObject id="pDz-87-DsD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-691" y="622"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="uNi-rc-2OE">
             <objects>
