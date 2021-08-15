@@ -32,6 +32,10 @@ class PreferencesUserDefault {
         try saveTabSettingSataList(dataList: dataList)
     }
     
+    func resetAll() {
+        userDefault.set(Data(), forKey: tabSettingKey)
+    }
+    
     func tabSettingDataList() throws -> [TabSettingData] {
         guard let data = userDefault.data(forKey: tabSettingKey), !data.isEmpty else {
             return []

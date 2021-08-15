@@ -62,8 +62,10 @@ class TabSettingViewController: NSViewController, NSTableViewDelegate, NSTableVi
         case "First":
             return presenter.title()
         case "Second":
-            return presenter.showControlViewText()
+            return presenter.url()
         case "Third":
+            return presenter.showControlViewText()
+        case "Fourth":
             return presenter.discordWhenSwitchingTabText()
         default:
             return ""

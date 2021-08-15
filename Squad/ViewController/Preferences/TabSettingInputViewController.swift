@@ -14,6 +14,7 @@ protocol TabSettingInputViewControllerDelegate: AnyObject {
 class TabSettingInputViewController: NSViewController {
 
     @IBOutlet weak var titleTextField: EditableNSTextField!
+    @IBOutlet weak var urlTextField: EditableNSTextField!
     @IBOutlet weak var showControlViewYesRaidoButton: NSButton!
     @IBOutlet weak var showControlViewNoRaidoButton: NSButton!
     @IBOutlet weak var discordYesRaidoButton: NSButton!
@@ -34,6 +35,7 @@ class TabSettingInputViewController: NSViewController {
     
     private func setupView() {
         titleTextField.stringValue = tabSettingData.title
+        urlTextField.stringValue = tabSettingData.url
         showControlViewYesRaidoButton.state = tabSettingData.isShowControlView ? .on : .off
         showControlViewNoRaidoButton.state = tabSettingData.isShowControlView ? .off : .on
         discordYesRaidoButton.state = tabSettingData.isDiscordWhenSwitchingTab ? .on : .off
@@ -50,6 +52,7 @@ class TabSettingInputViewController: NSViewController {
         let data = TabSettingData(
             id: tabSettingData.id,
             title: titleTextField.stringValue,
+            url: urlTextField.stringValue,
             isShowControlView: showControlViewYesRaidoButton.state == .on,
             isDiscordWhenSwitchingTab: discordYesRaidoButton.state == .on
         )

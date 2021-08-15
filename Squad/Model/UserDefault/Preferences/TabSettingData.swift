@@ -10,10 +10,11 @@ import Foundation
 struct TabSettingData: Codable {
     let id: String
     let title: String
+    let url: String
     let isShowControlView: Bool
     let isDiscordWhenSwitchingTab: Bool
     
     static func new() -> TabSettingData {
-        return TabSettingData(id: UUID().uuidString, title: "", isShowControlView: false, isDiscordWhenSwitchingTab: false)
+        return TabSettingData(id: UUID().uuidString, title: "", url: "", isShowControlView: false, isDiscordWhenSwitchingTab: false)
     }
 }

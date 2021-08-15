@@ -18,6 +18,10 @@ class TabSettingRowPresenter {
         return data.title
     }
     
+    func url() -> String {
+        return data.url
+    }
+    
     func showControlViewText() -> String {
         return data.isShowControlView ? "Yes" : "No"
     }

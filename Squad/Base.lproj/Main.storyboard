@@ -126,23 +126,23 @@
             <objects>
                 <viewController title="Tabs" id="E33-N8-eS9" customClass="TabSettingViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="cey-hu-C3Q">
-                        <rect key="frame" x="0.0" y="0.0" width="523" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="673" height="370"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgE-7N-8tt">
-                                <rect key="frame" x="16" y="56" width="491" height="198"/>
+                                <rect key="frame" x="16" y="56" width="641" height="298"/>
                                 <clipView key="contentView" id="AR0-w6-Uuj">
-                                    <rect key="frame" x="1" y="1" width="489" height="196"/>
+                                    <rect key="frame" x="1" y="1" width="639" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="small" headerView="ymy-V5-j3h" id="YWP-BO-leJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="489" height="168"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="639" height="268"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="First" width="203" minWidth="40" maxWidth="1000" id="Ul5-sH-tK4">
+                                                <tableColumn identifier="First" width="103" minWidth="40" maxWidth="1000" id="Ul5-sH-tK4">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Title">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -154,7 +154,19 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="Second" width="120" minWidth="120" maxWidth="120" id="uBI-xm-qkP">
+                                                <tableColumn identifier="Second" width="253" minWidth="10" maxWidth="3.4028234663852886e+38" id="Gzt-wL-4WB">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="URL">
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="eRa-hn-gAi">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                                <tableColumn identifier="Third" width="110" minWidth="110" maxWidth="110" id="uBI-xm-qkP">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Show control view">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -166,7 +178,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="Third" width="120" minWidth="120" maxWidth="120" id="hq6-G6-KdR">
+                                                <tableColumn identifier="Fourth" width="110" minWidth="110" maxWidth="110" id="hq6-G6-KdR">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <string key="title">Discard when 
 switching tabs</string>
@@ -185,10 +197,10 @@ switching tabs</string>
                                     </subviews>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="491" id="NdA-9j-hKN"/>
+                                    <constraint firstAttribute="width" constant="641" id="NdA-9j-hKN"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="nY9-0a-jpu">
-                                    <rect key="frame" x="1" y="181" width="478" height="16"/>
+                                    <rect key="frame" x="1" y="181" width="59" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="l1y-P6-sfd">
@@ -196,7 +208,7 @@ switching tabs</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" wantsLayer="YES" id="ymy-V5-j3h">
-                                    <rect key="frame" x="0.0" y="0.0" width="489" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="639" height="28"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
@@ -229,7 +241,7 @@ switching tabs</string>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dRX-1t-zEN">
-                                <rect key="frame" x="455" y="11" width="58" height="32"/>
+                                <rect key="frame" x="605" y="11" width="58" height="32"/>
                                 <buttonCell key="cell" type="push" title="Edit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bBo-MI-eVF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -261,18 +273,18 @@ switching tabs</string>
                 </viewController>
                 <customObject id="mse-lS-3gL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="427.5" y="1048"/>
+            <point key="canvasLocation" x="586" y="1056"/>
         </scene>
         <!--Tab Setting Input View Controller-->
         <scene sceneID="srz-GP-ibZ">
             <objects>
                 <viewController id="58B-zF-fSU" customClass="TabSettingInputViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Jix-IS-SzS">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="229"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="290"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5qS-FV-D2t">
-                                <rect key="frame" x="14" y="197" width="422" height="16"/>
+                                <rect key="frame" x="14" y="258" width="422" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="ARl-sf-YQm">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -288,7 +300,7 @@ switching tabs</string>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AiW-KK-oKX" customClass="EditableNSTextField" customModule="Squad" customModuleProvider="target">
-                                <rect key="frame" x="16" y="168" width="418" height="21"/>
+                                <rect key="frame" x="16" y="229" width="418" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="xgA-I5-qad">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -333,6 +345,16 @@ switching tabs</string>
                                     <action selector="onClickDiscordRaidoButton:" target="58B-zF-fSU" id="RFp-9N-eXF"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qay-jL-v4t">
+                                <rect key="frame" x="76" y="55" width="44" height="18"/>
+                                <buttonCell key="cell" type="radio" title="No" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Djk-Hn-0n3">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onClickDiscordRaidoButton:" target="58B-zF-fSU" id="wRe-Zp-fJU"/>
+                                </connections>
+                            </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="etf-gX-C7T">
                                 <rect key="frame" x="388" y="9" width="53" height="32"/>
                                 <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ztz-wS-lVI">
@@ -359,27 +381,36 @@ Gw
                                     <action selector="onClickCancelButton:" target="58B-zF-fSU" id="8ai-86-7cf"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qay-jL-v4t">
-                                <rect key="frame" x="76" y="55" width="44" height="18"/>
-                                <buttonCell key="cell" type="radio" title="No" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Djk-Hn-0n3">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y6l-Wa-OTo">
+                                <rect key="frame" x="14" y="197" width="422" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="URL" id="P9P-dw-Po9">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3yq-G2-AOn" customClass="EditableNSTextField" customModule="Squad" customModuleProvider="target">
+                                <rect key="frame" x="16" y="168" width="418" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="YbL-6x-xvi">
                                     <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="onClickDiscordRaidoButton:" target="58B-zF-fSU" id="wRe-Zp-fJU"/>
-                                </connections>
-                            </button>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qay-jL-v4t" secondAttribute="trailing" constant="20" symbolic="YES" id="12l-j5-0Dx"/>
                             <constraint firstItem="h2g-8W-Ivm" firstAttribute="top" secondItem="REZ-N6-A7b" secondAttribute="bottom" constant="8" symbolic="YES" id="2CK-7V-vVb"/>
+                            <constraint firstItem="REZ-N6-A7b" firstAttribute="leading" secondItem="3yq-G2-AOn" secondAttribute="leading" id="3j8-0q-fgn"/>
                             <constraint firstItem="Qay-jL-v4t" firstAttribute="centerY" secondItem="cSp-Fq-lHt" secondAttribute="centerY" id="5B5-Sg-TjD"/>
                             <constraint firstItem="etf-gX-C7T" firstAttribute="leading" secondItem="H8W-7s-fpT" secondAttribute="trailing" constant="16" id="9R5-MT-Ihe"/>
                             <constraint firstAttribute="trailing" secondItem="etf-gX-C7T" secondAttribute="trailing" constant="16" id="CGd-7i-k5E"/>
                             <constraint firstItem="AiW-KK-oKX" firstAttribute="top" secondItem="5qS-FV-D2t" secondAttribute="bottom" constant="8" symbolic="YES" id="DBf-f7-chW"/>
                             <constraint firstItem="0EN-Nu-XSs" firstAttribute="top" secondItem="h2g-8W-Ivm" secondAttribute="bottom" constant="16" id="DF5-we-O3b"/>
                             <constraint firstItem="H8W-7s-fpT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jix-IS-SzS" secondAttribute="leading" constant="317" id="JEM-le-MD1"/>
+                            <constraint firstItem="3yq-G2-AOn" firstAttribute="top" secondItem="Y6l-Wa-OTo" secondAttribute="bottom" constant="8" symbolic="YES" id="Ke6-31-AfP"/>
                             <constraint firstItem="REZ-N6-A7b" firstAttribute="trailing" secondItem="AiW-KK-oKX" secondAttribute="trailing" id="MTq-8M-zYJ"/>
+                            <constraint firstItem="3yq-G2-AOn" firstAttribute="leading" secondItem="Y6l-Wa-OTo" secondAttribute="leading" id="MmL-ED-D95"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e1y-G8-Eqd" secondAttribute="trailing" constant="20" symbolic="YES" id="QAn-t6-xGC"/>
                             <constraint firstItem="AiW-KK-oKX" firstAttribute="trailing" secondItem="etf-gX-C7T" secondAttribute="trailing" id="QVw-ue-mwU"/>
                             <constraint firstItem="5qS-FV-D2t" firstAttribute="top" secondItem="Jix-IS-SzS" secondAttribute="top" constant="16" id="Rfq-gS-nzG"/>
@@ -388,6 +419,7 @@ Gw
                             <constraint firstItem="0EN-Nu-XSs" firstAttribute="leading" secondItem="h2g-8W-Ivm" secondAttribute="leading" id="Vqj-Tq-TsK"/>
                             <constraint firstItem="cSp-Fq-lHt" firstAttribute="top" secondItem="0EN-Nu-XSs" secondAttribute="bottom" constant="8" symbolic="YES" id="Vu7-iW-qVH"/>
                             <constraint firstAttribute="bottom" secondItem="etf-gX-C7T" secondAttribute="bottom" constant="16" id="Wst-B9-Tif"/>
+                            <constraint firstItem="REZ-N6-A7b" firstAttribute="top" secondItem="3yq-G2-AOn" secondAttribute="bottom" constant="16" id="YcA-u4-ozh"/>
                             <constraint firstItem="H8W-7s-fpT" firstAttribute="centerY" secondItem="etf-gX-C7T" secondAttribute="centerY" id="aAh-aD-uhR"/>
                             <constraint firstItem="5qS-FV-D2t" firstAttribute="leading" secondItem="Jix-IS-SzS" secondAttribute="leading" constant="16" id="ccv-Ee-YhT"/>
                             <constraint firstItem="5qS-FV-D2t" firstAttribute="trailing" secondItem="AiW-KK-oKX" secondAttribute="trailing" id="dBd-zm-Hhk"/>
@@ -395,8 +427,11 @@ Gw
                             <constraint firstItem="Qay-jL-v4t" firstAttribute="leading" secondItem="cSp-Fq-lHt" secondAttribute="trailing" constant="16" id="eZd-hb-X2G"/>
                             <constraint firstItem="AiW-KK-oKX" firstAttribute="leading" secondItem="5qS-FV-D2t" secondAttribute="leading" id="gyT-ti-iqL"/>
                             <constraint firstItem="cSp-Fq-lHt" firstAttribute="leading" secondItem="0EN-Nu-XSs" secondAttribute="leading" id="hZq-ME-XeQ"/>
+                            <constraint firstItem="Y6l-Wa-OTo" firstAttribute="top" secondItem="AiW-KK-oKX" secondAttribute="bottom" constant="16" id="jCQ-Ep-J63"/>
+                            <constraint firstItem="Y6l-Wa-OTo" firstAttribute="leading" secondItem="AiW-KK-oKX" secondAttribute="leading" id="oEo-pE-gg8"/>
+                            <constraint firstItem="Y6l-Wa-OTo" firstAttribute="trailing" secondItem="3yq-G2-AOn" secondAttribute="trailing" id="p10-26-ge4"/>
                             <constraint firstItem="e1y-G8-Eqd" firstAttribute="centerY" secondItem="h2g-8W-Ivm" secondAttribute="centerY" id="q9O-9K-908"/>
-                            <constraint firstItem="REZ-N6-A7b" firstAttribute="top" secondItem="AiW-KK-oKX" secondAttribute="bottom" constant="16" id="r5A-4R-Hlw"/>
+                            <constraint firstItem="Y6l-Wa-OTo" firstAttribute="trailing" secondItem="AiW-KK-oKX" secondAttribute="trailing" id="uDg-gz-gmD"/>
                             <constraint firstItem="0EN-Nu-XSs" firstAttribute="trailing" secondItem="REZ-N6-A7b" secondAttribute="trailing" id="ufE-LT-WSD"/>
                             <constraint firstItem="H8W-7s-fpT" firstAttribute="top" secondItem="cSp-Fq-lHt" secondAttribute="bottom" constant="20" id="ziJ-8I-pgR"/>
                         </constraints>
@@ -407,6 +442,7 @@ Gw
                         <outlet property="showControlViewNoRaidoButton" destination="e1y-G8-Eqd" id="RDH-sM-8jD"/>
                         <outlet property="showControlViewYesRaidoButton" destination="h2g-8W-Ivm" id="boz-QS-gSf"/>
                         <outlet property="titleTextField" destination="AiW-KK-oKX" id="WU0-eV-k7w"/>
+                        <outlet property="urlTextField" destination="3yq-G2-AOn" id="3pQ-7V-fts"/>
                     </connections>
                 </viewController>
                 <customObject id="Q6t-yS-uQm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
