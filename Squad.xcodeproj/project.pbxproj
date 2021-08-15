@@ -17,6 +17,13 @@
 		FB0D44D026C178F100224267 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0D44CF26C178F100224267 /* WebView.swift */; };
 		FB631F9F26C6C2F2005EC13F /* WebWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631F9E26C6C2F2005EC13F /* WebWindowController.swift */; };
 		FB631FA226C8B739005EC13F /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FA026C8B739005EC13F /* MainWindowController.swift */; };
+		FB631FA726C8F6BE005EC13F /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FA526C8F6BE005EC13F /* PreferencesWindowController.swift */; };
+		FB631FAA26C8FF19005EC13F /* EditableNSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FA926C8FF19005EC13F /* EditableNSTextField.swift */; };
+		FB631FAC26C901B4005EC13F /* TabSettingInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FAB26C901B4005EC13F /* TabSettingInputViewController.swift */; };
+		FB631FB126C904AD005EC13F /* PreferencesUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB026C904AD005EC13F /* PreferencesUserDefault.swift */; };
+		FB631FB326C904B9005EC13F /* TabSettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB226C904B9005EC13F /* TabSettingData.swift */; };
+		FB631FB626C90D8C005EC13F /* TabSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB426C90D8C005EC13F /* TabSettingViewController.swift */; };
+		FB631FBA26C910BA005EC13F /* TabSettingRowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB926C910BA005EC13F /* TabSettingRowPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +40,13 @@
 		FB0D44CF26C178F100224267 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		FB631F9E26C6C2F2005EC13F /* WebWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebWindowController.swift; sourceTree = "<group>"; };
 		FB631FA026C8B739005EC13F /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		FB631FA526C8F6BE005EC13F /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		FB631FA926C8FF19005EC13F /* EditableNSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableNSTextField.swift; sourceTree = "<group>"; };
+		FB631FAB26C901B4005EC13F /* TabSettingInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingInputViewController.swift; sourceTree = "<group>"; };
+		FB631FB026C904AD005EC13F /* PreferencesUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesUserDefault.swift; sourceTree = "<group>"; };
+		FB631FB226C904B9005EC13F /* TabSettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingData.swift; sourceTree = "<group>"; };
+		FB631FB426C90D8C005EC13F /* TabSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingViewController.swift; sourceTree = "<group>"; };
+		FB631FB926C910BA005EC13F /* TabSettingRowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingRowPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +79,7 @@
 		FB0D44B026C00A7500224267 /* Squad */ = {
 			isa = PBXGroup;
 			children = (
+				FB631FAD26C9046D005EC13F /* Model */,
 				FB0D44C126C00E3100224267 /* ViewController */,
 				FB0D44CE26C178DA00224267 /* View */,
 				FB0D44B126C00A7500224267 /* AppDelegate.swift */,
@@ -79,6 +94,7 @@
 		FB0D44C126C00E3100224267 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FB631FA426C8F6A8005EC13F /* Preferences */,
 				FB631F9D26C6C2D7005EC13F /* Web */,
 				FB0D44C926C16D2E00224267 /* Tab */,
 				FB0D44C726C165BE00224267 /* Main */,
@@ -116,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FB0D44CF26C178F100224267 /* WebView.swift */,
+				FB631FA926C8FF19005EC13F /* EditableNSTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +144,50 @@
 				FB631F9E26C6C2F2005EC13F /* WebWindowController.swift */,
 			);
 			path = Web;
+			sourceTree = "<group>";
+		};
+		FB631FA426C8F6A8005EC13F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				FB631FB826C9109B005EC13F /* Presenter */,
+				FB631FA526C8F6BE005EC13F /* PreferencesWindowController.swift */,
+				FB631FB426C90D8C005EC13F /* TabSettingViewController.swift */,
+				FB631FAB26C901B4005EC13F /* TabSettingInputViewController.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		FB631FAD26C9046D005EC13F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB631FAF26C90483005EC13F /* UserDefault */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB631FAE26C9047A005EC13F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				FB631FB026C904AD005EC13F /* PreferencesUserDefault.swift */,
+				FB631FB226C904B9005EC13F /* TabSettingData.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		FB631FAF26C90483005EC13F /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				FB631FAE26C9047A005EC13F /* Preferences */,
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		FB631FB826C9109B005EC13F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FB631FB926C910BA005EC13F /* TabSettingRowPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,12 +261,19 @@
 			files = (
 				FB631F9F26C6C2F2005EC13F /* WebWindowController.swift in Sources */,
 				FB0D44CB26C16D8000224267 /* TabViewController.swift in Sources */,
+				FB631FAA26C8FF19005EC13F /* EditableNSTextField.swift in Sources */,
 				FB0D44C626C1656800224267 /* CreateRigntClickMenu.swift in Sources */,
+				FB631FBA26C910BA005EC13F /* TabSettingRowPresenter.swift in Sources */,
 				FB0D44B426C00A7500224267 /* MainViewController.swift in Sources */,
+				FB631FB126C904AD005EC13F /* PreferencesUserDefault.swift in Sources */,
 				FB0D44D026C178F100224267 /* WebView.swift in Sources */,
+				FB631FB626C90D8C005EC13F /* TabSettingViewController.swift in Sources */,
+				FB631FB326C904B9005EC13F /* TabSettingData.swift in Sources */,
 				FB0D44CD26C16DA400224267 /* WebViewController.swift in Sources */,
+				FB631FA726C8F6BE005EC13F /* PreferencesWindowController.swift in Sources */,
 				FB631FA226C8B739005EC13F /* MainWindowController.swift in Sources */,
 				FB0D44B226C00A7500224267 /* AppDelegate.swift in Sources */,
+				FB631FAC26C901B4005EC13F /* TabSettingInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
