@@ -8,10 +8,14 @@
 import Cocoa
 import WebKit
 
-class WebViewController: NSViewController, WKUIDelegate, WebViewDelegate {
+class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WebViewDelegate {
     @IBOutlet weak var contentView: NSView!
     @IBOutlet weak var controlView: NSView!
     @IBOutlet weak var progressBar: NSProgressIndicator!
+    @IBOutlet weak var backButton: NSButton!
+    @IBOutlet weak var forwardButton: NSButton!
+    @IBOutlet weak var reloadCancelButton: NSButton!
+    @IBOutlet weak var urlTextField: NSTextField!
     
     private var initialUrl: URL!
     private var webView: WebView?
@@ -56,6 +60,7 @@ class WebViewController: NSViewController, WKUIDelegate, WebViewDelegate {
     func addWebView() {
         webView = WebView(frame: contentView.bounds)
         webView?.uiDelegate = self
+        webView?.navigationDelegate = self
         webView?.delegate = self
         webView?.customMenu = rightClickMenu
         webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15 Chrome/92.0.4515.131"
@@ -71,6 +76,27 @@ class WebViewController: NSViewController, WKUIDelegate, WebViewDelegate {
         webView?.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
         webView?.removeFromSuperview()
         webView = nil
+    }
+    
+    func updateControlView(webView: WKWebView) {
+        backButton.isEnabled = webView.canGoBack
+        forwardButton.isEnabled = webView.canGoForward
+        reloadCancelButton.image = webView.isLoading ? NSImage(systemSymbolName: "multiply", accessibilityDescription: nil) : NSImage(systemSymbolName: "arrow.clockwise", accessibilityDescription: nil)
+        if let url = webView.url {
+            urlTextField.stringValue = url.absoluteString
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        updateControlView(webView: webView)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        updateControlView(webView: webView)
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        updateControlView(webView: webView)
     }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
@@ -116,5 +142,31 @@ class WebViewController: NSViewController, WKUIDelegate, WebViewDelegate {
 
     @objc func onSelectPreferences(_ sender: Any?) {
         
+    }
+    @IBAction func onClickBackButton(_ sender: Any) {
+        webView?.goBack()
+    }
+    
+    @IBAction func onClickForwardButton(_ sender: Any) {
+        webView?.goForward()
+    }
+    
+    @IBAction func onClickReloadCancelButton(_ sender: Any) {
+        guard let _webView = webView else {
+            return
+        }
+        
+        if _webView.isLoading {
+            _webView.stopLoading()
+        } else {
+            _webView.reload()
+        }
+    }
+    
+    @IBAction func onClickExternalLinkButton(_ sender: Any) {
+        guard let url = webView?.url else {
+            return
+        }
+        NSWorkspace.shared.open(url)
     }
 }

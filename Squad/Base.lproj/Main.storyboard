@@ -113,6 +113,9 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <color key="contentTintColor" white="0.30335884353741499" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="onClickBackButton:" target="OBp-HJ-SQq" id="LJ5-Jh-u5r"/>
+                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="35k-MS-H0w">
                                                 <rect key="frame" x="48" y="2" width="24" height="47"/>
@@ -124,6 +127,9 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <color key="contentTintColor" white="0.30335884353741499" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="onClickForwardButton:" target="OBp-HJ-SQq" id="wD3-WY-Ihm"/>
+                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t1n-Kb-T74">
                                                 <rect key="frame" x="406" y="16" width="28" height="18"/>
@@ -135,17 +141,23 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="onClickExternalLinkButton:" target="OBp-HJ-SQq" id="NTl-dJ-nuO"/>
+                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pIq-LE-4gF">
                                                 <rect key="frame" x="80" y="1.5" width="24.5" height="49"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="ni1-2N-bbY"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarRefreshTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="exZ-ge-v7j">
+                                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="arrow.clockwise" catalog="system" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="exZ-ge-v7j">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <color key="contentTintColor" white="0.30335884353741499" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="onClickReloadCancelButton:" target="OBp-HJ-SQq" id="FmK-2g-3a8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -191,9 +203,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="l3H-Sc-5v0" id="s5p-2h-iy1"/>
                         <outlet property="contentView" destination="PTH-54-27J" id="srx-sH-Xu0"/>
                         <outlet property="controlView" destination="EeR-Ki-3Rc" id="xCW-aF-EFg"/>
+                        <outlet property="forwardButton" destination="35k-MS-H0w" id="FcC-xH-zJa"/>
                         <outlet property="progressBar" destination="wUZ-jg-liQ" id="hFb-da-ND1"/>
+                        <outlet property="reloadCancelButton" destination="pIq-LE-4gF" id="YHA-Tg-i7W"/>
+                        <outlet property="urlTextField" destination="7m1-gI-sRb" id="boZ-LS-EI2"/>
                     </connections>
                 </viewController>
                 <customObject id="vqs-lW-VbM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -249,7 +265,7 @@
     <resources>
         <image name="NSTouchBarGoBackTemplate" width="10" height="14"/>
         <image name="NSTouchBarGoForwardTemplate" width="10" height="14"/>
-        <image name="NSTouchBarRefreshTemplate" width="14" height="16"/>
+        <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
         <image name="external_link" width="24" height="24"/>
     </resources>
 </document>
