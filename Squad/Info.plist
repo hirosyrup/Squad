@@ -36,5 +36,13 @@
 	<string>Use on web services that needs to use the microphone.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2021 koalab. All rights reserved.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Use on web services that needs to use the location data.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Use on web services that needs to use the location data.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use on web services that needs to use the location data.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Use on web services that needs to use the calendar data.</string>
 </dict>
 </plist>

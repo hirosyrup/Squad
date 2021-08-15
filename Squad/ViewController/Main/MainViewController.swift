@@ -8,18 +8,8 @@
 import Cocoa
 
 class MainViewController: NSViewController {
-    class func create() -> MainViewController {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier("MainViewController")
-        let vc = storyboard.instantiateController(withIdentifier: identifier) as! MainViewController
-        return vc
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // TDOO: To Preferences
-        view.frame = CGRect(x: 0, y: 0, width: 1000, height: 500)
     }
 }
 

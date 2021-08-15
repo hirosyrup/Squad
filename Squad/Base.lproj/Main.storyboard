@@ -23,6 +23,7 @@
         <!--Main View Controller-->
         <scene sceneID="hJW-zd-mwK">
             <objects>
+                <customObject id="4YR-KB-SSJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MainViewController" id="gGG-Ro-OEO" customClass="MainViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="2tM-Ih-JOS">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -43,7 +44,6 @@
                         </constraints>
                     </view>
                 </viewController>
-                <customObject id="4YR-KB-SSJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="94" y="234"/>
         </scene>
@@ -98,7 +98,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <progressIndicator maxValue="1" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-jg-liQ">
-                                        <rect key="frame" x="131" y="11" width="654" height="2"/>
+                                        <rect key="frame" x="131" y="10" width="654" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="Ut5-Lh-bD9"/>
                                         </constraints>
@@ -159,7 +159,7 @@
                                     <constraint firstItem="7m1-gI-sRb" firstAttribute="centerY" secondItem="EeR-Ki-3Rc" secondAttribute="centerY" id="EGs-g4-96d"/>
                                     <constraint firstItem="wUZ-jg-liQ" firstAttribute="leading" secondItem="7m1-gI-sRb" secondAttribute="leading" constant="3" id="FZk-hN-kPs"/>
                                     <constraint firstItem="35k-MS-H0w" firstAttribute="leading" secondItem="l3H-Sc-5v0" secondAttribute="trailing" constant="8" id="QIe-RZ-3lZ"/>
-                                    <constraint firstItem="wUZ-jg-liQ" firstAttribute="bottom" secondItem="7m1-gI-sRb" secondAttribute="bottom" constant="-2" id="Yyf-yF-Vr7"/>
+                                    <constraint firstItem="wUZ-jg-liQ" firstAttribute="bottom" secondItem="7m1-gI-sRb" secondAttribute="bottom" constant="-1" id="Yyf-yF-Vr7"/>
                                     <constraint firstItem="7m1-gI-sRb" firstAttribute="leading" secondItem="pIq-LE-4gF" secondAttribute="trailing" constant="24" id="erB-0Z-tP5"/>
                                     <constraint firstAttribute="trailing" secondItem="t1n-Kb-T74" secondAttribute="trailing" constant="16" id="esw-NB-J4c"/>
                                     <constraint firstItem="l3H-Sc-5v0" firstAttribute="leading" secondItem="EeR-Ki-3Rc" secondAttribute="leading" constant="16" id="fFo-BD-5bH"/>
@@ -208,6 +208,31 @@
                 <customObject id="daJ-ni-CZj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="603" y="234"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="F5N-0U-zMx">
+            <objects>
+                <windowController storyboardIdentifier="MainWindowController" id="ieF-kr-ixp" customClass="MainWindowController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="oXf-P8-6cI">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="239" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+                        <view key="contentView" id="HsP-ci-AlV">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="ieF-kr-ixp" id="tNF-DF-NhE"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="gGG-Ro-OEO" kind="relationship" relationship="window.shadowedContentViewController" id="7eF-Ru-bOd"/>
+                    </connections>
+                </windowController>
+                <customObject id="sbR-eF-rVt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447" y="249"/>
         </scene>
     </scenes>
     <resources>

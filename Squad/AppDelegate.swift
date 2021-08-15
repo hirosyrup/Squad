@@ -10,7 +10,7 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private let popover = NSPopover()
+    private let mainWindowVc = MainWindowController.create()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
@@ -18,29 +18,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.imagePosition = .imageLeft
             button.action = #selector(show(_:))
         }
-        constructPopover()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-    
-    private func constructPopover() {
-        let mainViewController = MainViewController.create()
-        popover.contentViewController = mainViewController
-        popover.behavior = .transient
-        popover.animates = false
-    }
 
     @objc func show(_ sender: Any?) {
-        if popover.isShown {
-            popover.performClose(sender)
-        } else {
-            if let button = statusItem.button {
-                popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
-                NSApplication.shared.activate(ignoringOtherApps: true)
-            }
-        }
+        mainWindowVc.showWindow(self)
+        NSApplication.shared.activate(ignoringOtherApps: true)
     }
 }
 

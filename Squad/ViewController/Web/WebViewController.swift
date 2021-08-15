@@ -56,7 +56,7 @@ class WebViewController: NSViewController, WKUIDelegate {
         webView = WebView(frame: contentView.bounds)
         webView?.uiDelegate = self
         webView?.customMenu = rightClickMenu
-        webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15"
+        webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15 Chrome/92.0.4515.131"
         webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: .new, context: nil)
         webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         webView?.autoresizingMask = [.height, .width]
