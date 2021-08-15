@@ -12,6 +12,16 @@ class TabViewController: NSTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addChild(WebViewController.create(initialUrl: URL(string: "https://www.google.co.jp/")!, title: "Test"))
+        let tabList = (try? PreferencesUserDefault().tabSettingDataList()) ?? []
+        tabList.forEach {
+            if let url = URL(string: $0.url) {
+                addChild(WebViewController.create(
+                    initialUrl: url,
+                    title: $0.title,
+                    initialIsShowControlView: $0.isShowControlView,
+                    isDiscordWhenSwitchingTab: $0.isDiscordWhenSwitchingTab)
+                )
+            }
+        }
     }
 }

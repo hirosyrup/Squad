@@ -14,7 +14,7 @@ class WebWindowController: NSWindowController, NSWindowDelegate {
         let identifier = NSStoryboard.SceneIdentifier("WebWindowController")
         let vc = storyboard.instantiateController(withIdentifier: identifier) as! WebWindowController
         if let webVc = vc.contentViewController as? WebViewController {
-            webVc.setupFromWindow(initialUrl: initialUrl, title: "")
+            webVc.setupFromWindow(initialUrl: initialUrl, title: "", initialIsShowControlView: true, isDiscordWhenSwitchingTab: false)
         }
         return vc
     }

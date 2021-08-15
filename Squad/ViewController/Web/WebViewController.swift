@@ -18,25 +18,33 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
     @IBOutlet weak var urlTextField: NSTextField!
     
     private var initialUrl: URL!
+    private var initialIsShowControlView: Bool!
+    private var isDiscordWhenSwitchingTab: Bool!
     private var webView: WebView?
     private var rightClickMenu: NSMenu!
     
-    class func create(initialUrl: URL, title: String) -> WebViewController {
+    class func create(initialUrl: URL, title: String, initialIsShowControlView: Bool, isDiscordWhenSwitchingTab: Bool) -> WebViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("WebViewController")
         let vc = storyboard.instantiateController(withIdentifier: identifier) as! WebViewController
         vc.initialUrl = initialUrl
+        vc.initialIsShowControlView = initialIsShowControlView
+        vc.isDiscordWhenSwitchingTab = isDiscordWhenSwitchingTab
         vc.title = title
         return vc
     }
     
-    func setupFromWindow(initialUrl: URL, title: String) {
+    func setupFromWindow(initialUrl: URL, title: String, initialIsShowControlView: Bool, isDiscordWhenSwitchingTab: Bool) {
         self.initialUrl = initialUrl
+        self.initialIsShowControlView = initialIsShowControlView
+        self.isDiscordWhenSwitchingTab = isDiscordWhenSwitchingTab
         self.title = title
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        controlView.isHidden = !initialIsShowControlView
         
         rightClickMenu = CreateRigntClickMenu.menu(
             preferenceAction: #selector(onSelectPreferences(_:))
@@ -54,7 +62,9 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
     override func viewWillDisappear() {
         super.viewWillDisappear()
         
-        removeWebView()
+        if isDiscordWhenSwitchingTab {
+            removeWebView()
+        }
     }
     
     func addWebView() {
