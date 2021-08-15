@@ -26,7 +26,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func show(_ sender: Any?) {
         mainWindowVc.showWindow(self)
-        NSApplication.shared.activate(ignoringOtherApps: true)
+        let app = NSApplication.shared
+        app.activate(ignoringOtherApps: true)
+        app.windows.forEach { window in
+            window.makeKeyAndOrderFront(app)
+        }
     }
 }
 

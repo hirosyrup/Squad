@@ -7,10 +7,22 @@
 
 import WebKit
 
+protocol WebViewDelegate {
+    func onKeyDown(with event: NSEvent) -> Bool
+}
+
 class WebView: WKWebView {
     var customMenu: NSMenu?
+    var delegate: WebViewDelegate?
     
     override func keyDown(with event: NSEvent) {
+        let funcOnKeyDown = {(event: NSEvent) -> Void in
+            let result = self.delegate?.onKeyDown(with: event) ?? false
+            if !result {
+                super.keyDown(with: event)
+            }
+        }
+        
         if event.modifierFlags.contains(NSEvent.ModifierFlags.command) {
             if event.modifierFlags.contains(NSEvent.ModifierFlags.shift) {
                 switch event.keyCode {
@@ -18,7 +30,7 @@ class WebView: WKWebView {
                 case 6:
                     NSApp.sendAction(Selector(("redo:")), to: nil, from: self)
                 default:
-                    super.keyDown(with: event)
+                    funcOnKeyDown(event)
                 }
             } else {
                 switch event.keyCode {
@@ -57,11 +69,11 @@ class WebView: WKWebView {
                 case 13:
                     window?.close()
                 default:
-                    super.keyDown(with: event)
+                    funcOnKeyDown(event)
                 }
             }
         } else {
-            super.keyDown(with: event)
+            funcOnKeyDown(event)
         }
     }
     
