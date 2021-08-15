@@ -30,14 +30,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="hQw-Fd-Gy6">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="292"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <connections>
                                     <segue destination="PlA-dA-yJp" kind="embed" id="OSU-17-lg3"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="hQw-Fd-Gy6" firstAttribute="top" secondItem="2tM-Ih-JOS" secondAttribute="top" constant="8" id="qD3-T8-jKI"/>
+                            <constraint firstItem="hQw-Fd-Gy6" firstAttribute="top" secondItem="2tM-Ih-JOS" secondAttribute="top" id="qD3-T8-jKI"/>
                             <constraint firstItem="hQw-Fd-Gy6" firstAttribute="leading" secondItem="2tM-Ih-JOS" secondAttribute="leading" id="qQA-xf-myT"/>
                             <constraint firstAttribute="bottom" secondItem="hQw-Fd-Gy6" secondAttribute="bottom" id="yoi-El-Jp3"/>
                             <constraint firstAttribute="trailing" secondItem="hQw-Fd-Gy6" secondAttribute="trailing" id="zEz-c0-dTZ"/>
@@ -51,7 +51,7 @@
         <scene sceneID="7S8-dR-0Hb">
             <objects>
                 <windowController storyboardIdentifier="WebWindowController" id="Nlw-zI-Wzq" customClass="WebWindowController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="bVg-ob-FwR">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="bVg-ob-FwR">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="239" width="480" height="270"/>
@@ -240,7 +240,7 @@
         <scene sceneID="F5N-0U-zMx">
             <objects>
                 <windowController storyboardIdentifier="MainWindowController" id="ieF-kr-ixp" customClass="MainWindowController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="oXf-P8-6cI">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="oXf-P8-6cI">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="239" width="480" height="270"/>
