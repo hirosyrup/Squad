@@ -67,6 +67,8 @@ class TabSettingViewController: NSViewController, NSTableViewDelegate, NSTableVi
             return presenter.showControlViewText()
         case "Fourth":
             return presenter.discordWhenSwitchingTabText()
+        case "Fifth":
+            return presenter.windowSizeText()
         default:
             return ""
         }

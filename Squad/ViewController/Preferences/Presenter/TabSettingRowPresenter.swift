@@ -29,4 +29,8 @@ class TabSettingRowPresenter {
     func discordWhenSwitchingTabText() -> String {
         return data.isDiscordWhenSwitchingTab ? "Yes" : "No"
     }
+    
+    func windowSizeText() -> String {
+        return "\(data.width)x\(data.height)"
+    }
 }

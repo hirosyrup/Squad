@@ -8,8 +8,32 @@
 import Cocoa
 
 class MainViewController: NSViewController {
+    @IBOutlet weak var containerView: NSView!
+    @IBOutlet weak var noteLabel: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let needTabSetting = ((try? PreferencesUserDefault().tabSettingDataList()) ?? []).isEmpty
+        containerView.isHidden = needTabSetting
+        noteLabel.isHidden = !needTabSetting
+    }
+    
+    override func rightMouseDown(with event: NSEvent) {
+        let isPressedCommand = event.modifierFlags.contains(NSEvent.ModifierFlags.command)
+        guard isPressedCommand else {
+            super.rightMouseDown(with: event)
+            return
+        }
+        
+        let rightClickMenu = CreateRigntClickMenu.menu(
+            preferenceAction: #selector(onSelectPreferences(_:))
+        )
+        
+        NSMenu.popUpContextMenu(rightClickMenu, with: event, for: view)
+    }
+    
+    @objc func onSelectPreferences(_ sender: Any?) {
+        PreferencesWindowController.shared.showWindow(self)
     }
 }
 

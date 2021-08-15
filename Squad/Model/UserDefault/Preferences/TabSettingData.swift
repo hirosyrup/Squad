@@ -13,8 +13,10 @@ struct TabSettingData: Codable {
     let url: String
     let isShowControlView: Bool
     let isDiscordWhenSwitchingTab: Bool
+    let width: Int
+    let height: Int
     
     static func new() -> TabSettingData {
-        return TabSettingData(id: UUID().uuidString, title: "", url: "", isShowControlView: false, isDiscordWhenSwitchingTab: false)
+        return TabSettingData(id: UUID().uuidString, title: "", url: "", isShowControlView: false, isDiscordWhenSwitchingTab: false, width: 1920, height: 1200)
     }
 }

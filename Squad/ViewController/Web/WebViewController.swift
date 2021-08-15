@@ -153,6 +153,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
     @objc func onSelectPreferences(_ sender: Any?) {
         PreferencesWindowController.shared.showWindow(self)
     }
+    
     @IBAction func onClickBackButton(_ sender: Any) {
         webView?.goBack()
     }

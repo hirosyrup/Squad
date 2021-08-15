@@ -19,6 +19,8 @@ class TabSettingInputViewController: NSViewController {
     @IBOutlet weak var showControlViewNoRaidoButton: NSButton!
     @IBOutlet weak var discordYesRaidoButton: NSButton!
     @IBOutlet weak var discordNoRaidoButton: NSButton!
+    @IBOutlet weak var widthTextField: NSTextField!
+    @IBOutlet weak var heightTextField: NSTextField!
     
     private var tabSettingData: TabSettingData!
     weak var delegate: TabSettingInputViewControllerDelegate?
@@ -40,6 +42,8 @@ class TabSettingInputViewController: NSViewController {
         showControlViewNoRaidoButton.state = tabSettingData.isShowControlView ? .off : .on
         discordYesRaidoButton.state = tabSettingData.isDiscordWhenSwitchingTab ? .on : .off
         discordNoRaidoButton.state = tabSettingData.isDiscordWhenSwitchingTab ? .off : .on
+        widthTextField.stringValue = "\(tabSettingData.width)"
+        heightTextField.stringValue = "\(tabSettingData.height)"
     }
     
     @IBAction func onClickShowControlViewRaidoButton(_ sender: Any) {
@@ -54,7 +58,9 @@ class TabSettingInputViewController: NSViewController {
             title: titleTextField.stringValue,
             url: urlTextField.stringValue,
             isShowControlView: showControlViewYesRaidoButton.state == .on,
-            isDiscordWhenSwitchingTab: discordYesRaidoButton.state == .on
+            isDiscordWhenSwitchingTab: discordYesRaidoButton.state == .on,
+            width: Int(widthTextField.stringValue) ?? tabSettingData.width,
+            height: Int(heightTextField.stringValue) ?? tabSettingData.height
         )
         try? PreferencesUserDefault().saveTabSettingData(data: data)
         delegate?.didUpdate(vc: self)
