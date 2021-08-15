@@ -192,6 +192,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="PTH-54-27J" id="srx-sH-Xu0"/>
+                        <outlet property="controlView" destination="EeR-Ki-3Rc" id="xCW-aF-EFg"/>
                         <outlet property="progressBar" destination="wUZ-jg-liQ" id="hFb-da-ND1"/>
                     </connections>
                 </viewController>

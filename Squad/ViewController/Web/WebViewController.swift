@@ -8,8 +8,9 @@
 import Cocoa
 import WebKit
 
-class WebViewController: NSViewController, WKUIDelegate {
+class WebViewController: NSViewController, WKUIDelegate, WebViewDelegate {
     @IBOutlet weak var contentView: NSView!
+    @IBOutlet weak var controlView: NSView!
     @IBOutlet weak var progressBar: NSProgressIndicator!
     
     private var initialUrl: URL!
@@ -55,6 +56,7 @@ class WebViewController: NSViewController, WKUIDelegate {
     func addWebView() {
         webView = WebView(frame: contentView.bounds)
         webView?.uiDelegate = self
+        webView?.delegate = self
         webView?.customMenu = rightClickMenu
         webView?.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/605.1.15 Chrome/92.0.4515.131"
         webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: .new, context: nil)
@@ -99,6 +101,17 @@ class WebViewController: NSViewController, WKUIDelegate {
         default:
             break
         }
+    }
+    
+    func onKeyDown(webView: WebView, event: NSEvent) -> Bool {
+        if event.modifierFlags.contains(NSEvent.ModifierFlags.command) &&
+            event.modifierFlags.contains(NSEvent.ModifierFlags.option) &&
+            event.keyCode == 34 {
+            // coomand+option+i
+            controlView.isHidden = !controlView.isHidden
+            return true
+        }
+        return false
     }
 
     @objc func onSelectPreferences(_ sender: Any?) {

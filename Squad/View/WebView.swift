@@ -8,7 +8,7 @@
 import WebKit
 
 protocol WebViewDelegate {
-    func onKeyDown(with event: NSEvent) -> Bool
+    func onKeyDown(webView: WebView, event: NSEvent) -> Bool
 }
 
 class WebView: WKWebView {
@@ -17,7 +17,7 @@ class WebView: WKWebView {
     
     override func keyDown(with event: NSEvent) {
         let funcOnKeyDown = {(event: NSEvent) -> Void in
-            let result = self.delegate?.onKeyDown(with: event) ?? false
+            let result = self.delegate?.onKeyDown(webView: self, event: event) ?? false
             if !result {
                 super.keyDown(with: event)
             }
