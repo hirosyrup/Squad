@@ -8,11 +8,14 @@
 import Cocoa
 import CoreFoundation
 
-class WebWindowController: NSWindowController, NSWindowDelegate {
-    class func create(initialUrl: URL) -> WebWindowController {
+class WebWindowController: NSWindowController {
+    class func create(initialUrl: URL, initialSize: NSSize?) -> WebWindowController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("WebWindowController")
         let vc = storyboard.instantiateController(withIdentifier: identifier) as! WebWindowController
+        if let _initialSize = initialSize {
+            vc.window?.setContentSize(_initialSize)
+        }
         if let webVc = vc.contentViewController as? WebViewController {
             webVc.setupFromWindow(initialUrl: initialUrl, title: "", initialIsShowControlView: true, isDiscordWhenSwitchingTab: false)
         }
@@ -21,14 +24,5 @@ class WebWindowController: NSWindowController, NSWindowDelegate {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-    }
-    
-    override func keyDown(with event: NSEvent) {
-        // command+w
-        if event.modifierFlags.contains(NSEvent.ModifierFlags.command) && event.keyCode == 13 {
-            window?.close()
-        } else {
-            super.keyDown(with: event)
-        }
     }
 }

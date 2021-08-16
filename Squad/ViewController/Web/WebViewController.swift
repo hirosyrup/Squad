@@ -44,11 +44,14 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controlView.isHidden = !initialIsShowControlView
-        
         rightClickMenu = CreateRigntClickMenu.menu(
             preferenceAction: #selector(onSelectPreferences(_:))
         )
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        controlView.isHidden = !initialIsShowControlView
     }
     
     override func viewDidAppear() {
@@ -114,7 +117,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
             frame.isMainFrame {
             return nil
         }
-        let wc = WebWindowController.create(initialUrl: navigationAction.request.url!)
+        let wc = WebWindowController.create(initialUrl: navigationAction.request.url!, initialSize: view.bounds.size)
         wc.showWindow(self)
         return nil
     }
