@@ -33,7 +33,7 @@ class MainViewController: NSViewController {
     }
     
     @objc func onSelectPreferences(_ sender: Any?) {
-        PreferencesWindowController.shared.showWindow(self)
+        PreferencesWindowController.create().showWindow(self)
     }
 }
 

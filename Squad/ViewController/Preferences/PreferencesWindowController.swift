@@ -8,9 +8,7 @@
 import Cocoa
 
 class PreferencesWindowController: NSWindowController {
-    static let shared = PreferencesWindowController.create()
-    
-    private class func create() -> PreferencesWindowController {
+    class func create() -> PreferencesWindowController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("PreferencesWindowController")
         let vc = storyboard.instantiateController(withIdentifier: identifier) as! PreferencesWindowController
