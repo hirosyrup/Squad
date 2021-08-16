@@ -17,8 +17,5 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        
-        // TDOO: To Preferences
-        window?.setContentSize(NSSize(width: 1000, height: 500))
     }
 }

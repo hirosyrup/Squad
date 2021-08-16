@@ -9,10 +9,12 @@ import Cocoa
 
 class TabViewController: NSTabViewController {
 
+    private var tabList = [TabSettingData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tabList = (try? PreferencesUserDefault().tabSettingDataList()) ?? []
+        tabList = (try? PreferencesUserDefault().tabSettingDataList()) ?? []
         tabList.forEach {
             if let url = URL(string: $0.url) {
                 addChild(WebViewController.create(
@@ -23,5 +25,21 @@ class TabViewController: NSTabViewController {
                 )
             }
         }
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        setWindowSize(tabViewItem: tabView.selectedTabViewItem)
+    }
+    
+    private func setWindowSize(tabViewItem: NSTabViewItem?) {
+        if let index = tabView.tabViewItems.firstIndex(where: { $0 === tabViewItem }) {
+            let tab = tabList[index]
+            view.window?.setContentSize(NSSize(width: tab.width, height: tab.height))
+        }
+    }
+    
+    override func tabView(_ tabView: NSTabView, didSelect tabViewItem: NSTabViewItem?) {
+        setWindowSize(tabViewItem: tabViewItem)
     }
 }
