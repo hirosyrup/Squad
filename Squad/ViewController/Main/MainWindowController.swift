@@ -18,4 +18,13 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
     }
+    
+    override func keyDown(with event: NSEvent) {
+        // command+w
+        if event.modifierFlags.contains(NSEvent.ModifierFlags.command) && event.keyCode == 13 {
+            window?.close()
+        } else {
+            super.keyDown(with: event)
+        }
+    }
 }

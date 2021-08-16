@@ -21,8 +21,14 @@ class WebWindowController: NSWindowController, NSWindowDelegate {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        
-        // TDOO: To Preferences
-        window?.setContentSize(NSSize(width: 1000, height: 500))
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        // command+w
+        if event.modifierFlags.contains(NSEvent.ModifierFlags.command) && event.keyCode == 13 {
+            window?.close()
+        } else {
+            super.keyDown(with: event)
+        }
     }
 }
