@@ -80,6 +80,7 @@ class TabSettingViewController: NSViewController, NSTableViewDelegate, NSTableVi
     
     func didUpdate(vc: TabSettingInputViewController) {
         reloadDataList()
+        PreferencesNotification.notify()
     }
     
     @IBAction func onClickDeleteButton(_ sender: Any) {
@@ -89,5 +90,6 @@ class TabSettingViewController: NSViewController, NSTableViewDelegate, NSTableVi
         
         try? PreferencesUserDefault().deleteTabSettingData(data: dataList[tableView.selectedRow])
         reloadDataList()
+        PreferencesNotification.notify()
     }
 }

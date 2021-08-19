@@ -13,6 +13,11 @@ class MainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PreferencesNotification.addObserver(observer: self, selector: #selector(didChangePreferences(_:)))
+        updateViews()
+    }
+    
+    private func updateViews() {
         let needTabSetting = ((try? PreferencesUserDefault().tabSettingDataList()) ?? []).isEmpty
         containerView.isHidden = needTabSetting
         noteLabel.isHidden = !needTabSetting
@@ -34,6 +39,10 @@ class MainViewController: NSViewController {
     
     @objc func onSelectPreferences(_ sender: Any?) {
         PreferencesWindowController.create().showWindow(self)
+    }
+    
+    @objc func didChangePreferences(_ sender: Any?) {
+        updateViews()
     }
 }
 
