@@ -16,20 +16,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("menu_bar_icon"))
             button.imagePosition = .imageLeft
-            button.action = #selector(show(_:))
+            button.action = #selector(onClick(_:))
         }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-    @objc func show(_ sender: Any?) {
+    
+    private func show() {
         mainWindowVc.showWindow(self)
         let app = NSApplication.shared
         app.activate(ignoringOtherApps: true)
         app.windows.forEach { window in
             window.makeKeyAndOrderFront(app)
+        }
+    }
+    
+    private func hide() {
+        NSApplication.shared.hide(self)
+    }
+    
+    private func hasVisibleWindow() -> Bool {
+        return NSApplication.shared.windows.filter{$0.canHide && $0.isVisible}.count > 0
+    }
+
+    @objc func onClick(_ sender: Any?) {
+        if hasVisibleWindow() {
+            hide()
+        } else {
+            show()
         }
     }
 }
