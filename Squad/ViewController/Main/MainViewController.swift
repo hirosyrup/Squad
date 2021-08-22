@@ -30,20 +30,9 @@ class MainViewController: NSViewController {
             return
         }
         
-        let rightClickMenu = CreateRigntClickMenu.menu(
-            preferenceAction: #selector(onSelectPreferences(_:)),
-            quitAction: #selector(onSelectQuit(_:))
-        )
+        let rightClickMenu = CreateRigntClickMenu.menu(vc: self)
         
         NSMenu.popUpContextMenu(rightClickMenu, with: event, for: view)
-    }
-    
-    @objc func onSelectPreferences(_ sender: Any?) {
-        PreferencesWindowController.create().showWindow(self)
-    }
-    
-    @objc func onSelectQuit(_ sender: Any?) {
-        NSApplication.shared.terminate(self)
     }
     
     @objc func didChangePreferences(_ sender: Any?) {

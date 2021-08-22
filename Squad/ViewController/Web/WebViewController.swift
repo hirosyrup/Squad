@@ -44,10 +44,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rightClickMenu = CreateRigntClickMenu.menu(
-            preferenceAction: #selector(onSelectPreferences(_:)),
-            quitAction: #selector(onSelectQuit(_:))
-        )
+        rightClickMenu = CreateRigntClickMenu.menu(vc: self)
     }
     
     override func viewWillAppear() {
@@ -152,14 +149,6 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
             return true
         }
         return false
-    }
-
-    @objc func onSelectPreferences(_ sender: Any?) {
-        PreferencesWindowController.create().showWindow(self)
-    }
-    
-    @objc func onSelectQuit(_ sender: Any?) {
-        NSApplication.shared.terminate(self)
     }
     
     @IBAction func onClickBackButton(_ sender: Any) {

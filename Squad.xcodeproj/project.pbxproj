@@ -25,6 +25,7 @@
 		FB631FB326C904B9005EC13F /* TabSettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB226C904B9005EC13F /* TabSettingData.swift */; };
 		FB631FB626C90D8C005EC13F /* TabSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB426C90D8C005EC13F /* TabSettingViewController.swift */; };
 		FB631FBA26C910BA005EC13F /* TabSettingRowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB926C910BA005EC13F /* TabSettingRowPresenter.swift */; };
+		FB700AA426D28014000CE4B2 /* NSViewController+RightClickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB700AA326D28014000CE4B2 /* NSViewController+RightClickMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		FB631FB226C904B9005EC13F /* TabSettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingData.swift; sourceTree = "<group>"; };
 		FB631FB426C90D8C005EC13F /* TabSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingViewController.swift; sourceTree = "<group>"; };
 		FB631FB926C910BA005EC13F /* TabSettingRowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingRowPresenter.swift; sourceTree = "<group>"; };
+		FB700AA326D28014000CE4B2 /* NSViewController+RightClickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+RightClickMenu.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		FB0D44C126C00E3100224267 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FB700AA226D27FAD000CE4B2 /* Extension */,
 				FB631FA426C8F6A8005EC13F /* Preferences */,
 				FB631F9D26C6C2D7005EC13F /* Web */,
 				FB0D44C926C16D2E00224267 /* Tab */,
@@ -201,6 +204,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		FB700AA226D27FAD000CE4B2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FB700AA326D28014000CE4B2 /* NSViewController+RightClickMenu.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,6 +290,7 @@
 				FB0D44B426C00A7500224267 /* MainViewController.swift in Sources */,
 				FB631FB126C904AD005EC13F /* PreferencesUserDefault.swift in Sources */,
 				FB0D44D026C178F100224267 /* WebView.swift in Sources */,
+				FB700AA426D28014000CE4B2 /* NSViewController+RightClickMenu.swift in Sources */,
 				FB631FB626C90D8C005EC13F /* TabSettingViewController.swift in Sources */,
 				FB631FB326C904B9005EC13F /* TabSettingData.swift in Sources */,
 				FB0D44CD26C16DA400224267 /* WebViewController.swift in Sources */,

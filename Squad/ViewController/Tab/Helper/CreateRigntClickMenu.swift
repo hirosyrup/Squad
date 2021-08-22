@@ -8,13 +8,10 @@
 import Cocoa
 
 class CreateRigntClickMenu {
-    class func menu(
-        preferenceAction: Selector,
-        quitAction: Selector
-    ) -> NSMenu {
+    class func menu(vc: NSViewController) -> NSMenu {
         let rightClickMenu = NSMenu(title: "right click menu")
-        rightClickMenu.addItem(NSMenuItem(title: "Preferences", action: preferenceAction, keyEquivalent: ""))
-        rightClickMenu.addItem(NSMenuItem(title: "Quit", action: quitAction, keyEquivalent: ""))
+        rightClickMenu.addItem(NSMenuItem(title: "Preferences", action: #selector(vc.onSelectPreferences(_:)), keyEquivalent: ""))
+        rightClickMenu.addItem(NSMenuItem(title: "Quit", action: #selector(vc.onSelectQuit(_:)), keyEquivalent: ""))
         return rightClickMenu
     }
 }
