@@ -725,6 +725,105 @@ Gw
             </objects>
             <point key="canvasLocation" x="-447" y="249"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="ReX-pI-7k6">
+            <objects>
+                <windowController storyboardIdentifier="AboutWindowController" id="8Y0-pA-Se6" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="FIn-Fy-uri">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="239" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+                        <view key="contentView" id="WvK-Zq-HGU">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="8Y0-pA-Se6" id="5cM-kD-OQe"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="E41-5c-hZE" kind="relationship" relationship="window.shadowedContentViewController" id="a7f-uL-zvT"/>
+                    </connections>
+                </windowController>
+                <customObject id="RL6-PC-Vr5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-676" y="1470"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="WEZ-7V-9tW">
+            <objects>
+                <viewController id="E41-5c-hZE" customClass="AboutViewController" customModule="Butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="vdk-4A-jQs">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box fixedFrame="YES" boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="VUB-Ja-Caa">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="5m5-WS-1VO">
+                                    <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vr-F9-7mM">
+                                            <rect key="frame" x="30" y="30" width="90" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="OGb-CU-IBk"/>
+                                                <constraint firstAttribute="width" constant="90" id="eFS-UH-IFL"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="about_icon" id="MlI-iP-zEB"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGV-Hf-KFv">
+                                            <rect key="frame" x="134" y="70" width="120" height="50"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Squad" id="L9Q-6e-hHq">
+                                                <font key="font" size="42" name="HelveticaNeue-Thin"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5J3-H6-YNF">
+                                            <rect key="frame" x="134" y="49" width="90" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="version 1.0.0" id="ePA-vb-qCP">
+                                                <font key="font" size="15" name="HelveticaNeue"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qzb-4w-K4e">
+                                            <rect key="frame" x="134" y="35" width="205" height="12"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright © 2021 koalab. All rights reserved." id="vmo-m4-6VE">
+                                                <font key="font" size="10" name="HelveticaNeue"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qzb-4w-K4e" secondAttribute="trailing" id="0iP-hS-xWA"/>
+                                        <constraint firstItem="Qzb-4w-K4e" firstAttribute="top" secondItem="5J3-H6-YNF" secondAttribute="bottom" constant="2" id="EHx-Gd-bV9"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TGV-Hf-KFv" secondAttribute="trailing" id="EmS-6L-UxX"/>
+                                        <constraint firstItem="TGV-Hf-KFv" firstAttribute="leading" secondItem="1vr-F9-7mM" secondAttribute="trailing" constant="16" id="Nou-ay-x6U"/>
+                                        <constraint firstItem="1vr-F9-7mM" firstAttribute="centerY" secondItem="5m5-WS-1VO" secondAttribute="centerY" id="R4W-8P-VZg"/>
+                                        <constraint firstItem="Qzb-4w-K4e" firstAttribute="leading" secondItem="5J3-H6-YNF" secondAttribute="leading" id="RYt-oK-CmO"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5J3-H6-YNF" secondAttribute="trailing" id="XBK-qe-LIh"/>
+                                        <constraint firstItem="5J3-H6-YNF" firstAttribute="leading" secondItem="TGV-Hf-KFv" secondAttribute="leading" id="kLf-et-0yw"/>
+                                        <constraint firstItem="5J3-H6-YNF" firstAttribute="top" secondItem="TGV-Hf-KFv" secondAttribute="bottom" constant="4" id="mPg-Qk-sea"/>
+                                        <constraint firstItem="1vr-F9-7mM" firstAttribute="leading" secondItem="5m5-WS-1VO" secondAttribute="leading" constant="30" id="sK0-AH-jlR"/>
+                                        <constraint firstItem="TGV-Hf-KFv" firstAttribute="centerY" secondItem="5m5-WS-1VO" secondAttribute="centerY" constant="-20" id="tXZ-hb-f7l"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="copyLightLabel" destination="Qzb-4w-K4e" id="Ybj-5n-QGm"/>
+                        <outlet property="versionLabel" destination="5J3-H6-YNF" id="CJW-TA-YFb"/>
+                    </connections>
+                </viewController>
+                <customObject id="Vbz-AG-CW0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="1453"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="1Tj-Zm-6w8"/>
@@ -732,6 +831,7 @@ Gw
     <resources>
         <image name="NSTouchBarGoBackTemplate" width="10" height="14"/>
         <image name="NSTouchBarGoForwardTemplate" width="10" height="14"/>
+        <image name="about_icon" width="320" height="320"/>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
         <image name="external_link" width="24" height="24"/>
         <image name="minus" catalog="system" width="14" height="4"/>

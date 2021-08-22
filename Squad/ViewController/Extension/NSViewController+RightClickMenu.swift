@@ -8,6 +8,13 @@
 import Cocoa
 
 extension NSViewController {
+    @objc func onSelectAbout(_ sender: Any?) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let identifier = NSStoryboard.SceneIdentifier("AboutWindowController")
+        let wc = storyboard.instantiateController(withIdentifier: identifier) as! NSWindowController
+        wc.showWindow(self)
+    }
+    
     @objc func onSelectPreferences(_ sender: Any?) {
         PreferencesWindowController.create().showWindow(self)
     }
