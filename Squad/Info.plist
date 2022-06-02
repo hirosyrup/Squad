@@ -17,32 +17,32 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSMinimumSystemVersion</key>
-	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
-	<key>NSMainStoryboardFile</key>
-	<string>Main</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Use on web services that needs to use the calendar data.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Use on web services that needs to use the camera.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Use on web services that needs to use the microphone.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2021 koalab. All rights reserved.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Use on web services that needs to use the location data.</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Use on web services that needs to use the location data.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Use on web services that needs to use the location data.</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Use on web services that needs to use the calendar data.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Use on web services that needs to use the location data.</string>
+	<key>NSMainStoryboardFile</key>
+	<string>Main</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Use on web services that needs to use the microphone.</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>
