@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -146,13 +147,13 @@ from Preferences by command + right click.</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgE-7N-8tt">
-                                <rect key="frame" x="16" y="56" width="641" height="298"/>
+                                <rect key="frame" x="16" y="104" width="641" height="250"/>
                                 <clipView key="contentView" id="AR0-w6-Uuj">
-                                    <rect key="frame" x="1" y="1" width="639" height="296"/>
+                                    <rect key="frame" x="1" y="1" width="639" height="248"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="small" headerView="ymy-V5-j3h" id="YWP-BO-leJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="639" height="268"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="639" height="220"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -210,7 +211,7 @@ switching tabs</string>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="Fifth" width="90" minWidth="10" maxWidth="3.4028234663852886e+38" id="aWj-Vs-RxL">
+                                                <tableColumn identifier="Fifth" width="93" minWidth="10" maxWidth="3.4028234663852886e+38" id="aWj-Vs-RxL">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Window Size">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -243,7 +244,7 @@ switching tabs</string>
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="llN-fM-AI0">
-                                <rect key="frame" x="16" y="15" width="24" height="26"/>
+                                <rect key="frame" x="16" y="63" width="24" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Tm3-vJ-ICL"/>
                                     <constraint firstAttribute="width" constant="24" id="dhX-a7-03B"/>
@@ -257,7 +258,7 @@ switching tabs</string>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rny-lm-aA3">
-                                <rect key="frame" x="39" y="15" width="24" height="26"/>
+                                <rect key="frame" x="39" y="63" width="24" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="CO6-YR-NjW"/>
                                     <constraint firstAttribute="height" constant="24" id="CmD-Ng-pwH"/>
@@ -271,7 +272,7 @@ switching tabs</string>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dRX-1t-zEN">
-                                <rect key="frame" x="605" y="11" width="58" height="32"/>
+                                <rect key="frame" x="605" y="59" width="58" height="32"/>
                                 <buttonCell key="cell" type="push" title="Edit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bBo-MI-eVF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -280,30 +281,49 @@ switching tabs</string>
                                     <segue destination="58B-zF-fSU" kind="sheet" identifier="Edit" id="1Tj-Zm-6w8"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-j6-62K">
+                                <rect key="frame" x="15" y="24" width="240" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Open a link in your default browser" id="6bs-gU-S2e">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="OdD-tQ-eqv">
+                                <rect key="frame" x="616" y="19" width="42" height="25"/>
+                                <connections>
+                                    <action selector="onChangeOpenLinkSettingSwitch:" target="E33-N8-eS9" id="MC8-XS-mwp"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <constraints>
                             <constraint firstItem="dRX-1t-zEN" firstAttribute="centerY" secondItem="rny-lm-aA3" secondAttribute="centerY" id="0tz-G8-yzR"/>
                             <constraint firstItem="XgE-7N-8tt" firstAttribute="top" secondItem="cey-hu-C3Q" secondAttribute="top" constant="16" id="6TD-yj-Bp9"/>
                             <constraint firstItem="rny-lm-aA3" firstAttribute="top" secondItem="llN-fM-AI0" secondAttribute="top" id="Cue-JX-JVU"/>
-                            <constraint firstItem="llN-fM-AI0" firstAttribute="top" secondItem="XgE-7N-8tt" secondAttribute="bottom" constant="16" id="D5o-Bp-mmg"/>
                             <constraint firstItem="dRX-1t-zEN" firstAttribute="trailing" secondItem="YWP-BO-leJ" secondAttribute="trailing" id="FtL-Vq-7En"/>
-                            <constraint firstAttribute="bottom" secondItem="llN-fM-AI0" secondAttribute="bottom" constant="16" id="M9U-3N-Xag"/>
                             <constraint firstItem="rny-lm-aA3" firstAttribute="bottom" secondItem="llN-fM-AI0" secondAttribute="bottom" id="McI-sY-JpB"/>
+                            <constraint firstItem="uUt-j6-62K" firstAttribute="top" secondItem="llN-fM-AI0" secondAttribute="bottom" constant="24" id="QDV-If-9me"/>
                             <constraint firstItem="rny-lm-aA3" firstAttribute="leading" secondItem="llN-fM-AI0" secondAttribute="trailing" constant="-1" id="QVL-6y-DM1"/>
+                            <constraint firstAttribute="bottom" secondItem="uUt-j6-62K" secondAttribute="bottom" constant="24" id="RwP-i9-hZ6"/>
+                            <constraint firstItem="OdD-tQ-eqv" firstAttribute="trailing" secondItem="YWP-BO-leJ" secondAttribute="trailing" id="bNP-Xg-cgH"/>
                             <constraint firstItem="XgE-7N-8tt" firstAttribute="leading" secondItem="cey-hu-C3Q" secondAttribute="leading" constant="16" id="luk-TN-bPq"/>
+                            <constraint firstItem="OdD-tQ-eqv" firstAttribute="centerY" secondItem="uUt-j6-62K" secondAttribute="centerY" id="mch-ne-yhz"/>
                             <constraint firstAttribute="trailing" secondItem="XgE-7N-8tt" secondAttribute="trailing" constant="16" id="npH-rG-Muc"/>
+                            <constraint firstItem="llN-fM-AI0" firstAttribute="top" secondItem="XgE-7N-8tt" secondAttribute="bottom" constant="16" id="pfo-wS-SGl"/>
+                            <constraint firstItem="uUt-j6-62K" firstAttribute="leading" secondItem="YWP-BO-leJ" secondAttribute="leading" id="qjW-Rp-qqO"/>
                             <constraint firstItem="llN-fM-AI0" firstAttribute="leading" secondItem="cey-hu-C3Q" secondAttribute="leading" constant="16" id="sOa-9A-ZX2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deleteButton" destination="rny-lm-aA3" id="FTC-iu-7M2"/>
                         <outlet property="editButton" destination="dRX-1t-zEN" id="8i9-xd-hoX"/>
+                        <outlet property="openLinkSettingSwitch" destination="OdD-tQ-eqv" id="lB9-t3-qcU"/>
                         <outlet property="tableView" destination="YWP-BO-leJ" id="34V-Jo-814"/>
                     </connections>
                 </viewController>
                 <customObject id="mse-lS-3gL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586" y="1056"/>
+            <point key="canvasLocation" x="585.5" y="1056"/>
         </scene>
         <!--Tab Setting Input View Controller-->
         <scene sceneID="srz-GP-ibZ">
@@ -753,7 +773,7 @@ Gw
         <!--About View Controller-->
         <scene sceneID="WEZ-7V-9tW">
             <objects>
-                <viewController id="E41-5c-hZE" customClass="AboutViewController" customModule="Butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E41-5c-hZE" customClass="AboutViewController" customModule="Squad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="vdk-4A-jQs">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>

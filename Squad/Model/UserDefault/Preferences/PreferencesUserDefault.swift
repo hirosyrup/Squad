@@ -9,11 +9,20 @@ import Foundation
 
 class PreferencesUserDefault {
     let userDefault = UserDefaults.standard
-    
+
+    let openLinkSettingKey = "openLinkSetting"
     let tabSettingKey = "tabSetting"
     
     init() {
-        userDefault.register(defaults: [tabSettingKey: Data()])
+        userDefault.register(defaults: [openLinkSettingKey: true, tabSettingKey: Data()])
+    }
+
+    func saveOpenLinkSetting(value: Bool) {
+        userDefault.set(value, forKey: openLinkSettingKey)
+    }
+
+    func openLinkSetting() -> Bool {
+        userDefault.bool(forKey: openLinkSettingKey)
     }
     
     func saveTabSettingData(data: TabSettingData) throws {
@@ -33,6 +42,7 @@ class PreferencesUserDefault {
     }
     
     func resetAll() {
+        userDefault.set(true, forKey: openLinkSettingKey)
         userDefault.set(Data(), forKey: tabSettingKey)
     }
     

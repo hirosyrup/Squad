@@ -115,8 +115,13 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
             frame.isMainFrame {
             return nil
         }
-        let wc = WebWindowController.create(initialUrl: navigationAction.request.url!, initialSize: view.bounds.size)
-        wc.showWindow(self)
+        let url = navigationAction.request.url!
+        if PreferencesUserDefault().openLinkSetting() {
+            NSWorkspace.shared.open(url)
+        } else {
+            let wc = WebWindowController.create(initialUrl: url, initialSize: view.bounds.size)
+            wc.showWindow(self)
+        }
         return nil
     }
     

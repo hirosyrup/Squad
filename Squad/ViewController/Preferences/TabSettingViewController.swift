@@ -12,6 +12,7 @@ class TabSettingViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var deleteButton: NSButton!
     @IBOutlet weak var editButton: NSButton!
+    @IBOutlet weak var openLinkSettingSwitch: NSSwitch!
     private var dataList = [TabSettingData]()
     
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class TabSettingViewController: NSViewController, NSTableViewDelegate, NSTableVi
         let isSelectedRow = tableView.selectedRow != -1
         deleteButton.isEnabled = isSelectedRow
         editButton.isEnabled = isSelectedRow
+        openLinkSettingSwitch.state = PreferencesUserDefault().openLinkSetting() ? .on : .off
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -91,5 +93,9 @@ class TabSettingViewController: NSViewController, NSTableViewDelegate, NSTableVi
         try? PreferencesUserDefault().deleteTabSettingData(data: dataList[tableView.selectedRow])
         reloadDataList()
         PreferencesNotification.notify()
+    }
+
+    @IBAction func onChangeOpenLinkSettingSwitch(_ sender: Any) {
+        PreferencesUserDefault().saveOpenLinkSetting(value: openLinkSettingSwitch.state == .on)
     }
 }
