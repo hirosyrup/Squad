@@ -8,7 +8,7 @@
 import Cocoa
 import WebKit
 
-class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WebViewDelegate {
+class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WebViewDelegate, WKScriptMessageHandler {
     @IBOutlet weak var contentView: NSView!
     @IBOutlet weak var controlView: NSView!
     @IBOutlet weak var progressBar: NSProgressIndicator!
@@ -69,7 +69,23 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
     }
     
     func addWebView() {
-        webView = WebView(frame: contentView.bounds)
+        let script = """
+        document.body.addEventListener('click', function(e){
+        const link = e.target.getAttribute('href');
+        if (link) {
+        webkit.messageHandlers.onClick.postMessage(link);
+        }
+        });
+        """
+        let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        let controller = WKUserContentController()
+        controller.addUserScript(userScript)
+        controller.add(self, name: "onClick")
+
+        let configuration = WKWebViewConfiguration()
+        configuration.userContentController = controller
+
+        webView = WebView(frame: contentView.bounds, configuration: configuration)
         webView?.uiDelegate = self
         webView?.navigationDelegate = self
         webView?.delegate = self
@@ -111,20 +127,22 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, W
     }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        if let frame = navigationAction.targetFrame,
-            frame.isMainFrame {
-            return nil
-        }
-        let url = navigationAction.request.url!
-        if PreferencesUserDefault().openLinkSetting() {
-            NSWorkspace.shared.open(url)
-        } else {
-            let wc = WebWindowController.create(initialUrl: url, initialSize: view.bounds.size)
-            wc.showWindow(self)
-        }
         return nil
     }
-    
+
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "onClick" {
+            if let path = message.body as? String, !path.isEmpty, let url = URL(string: path) {
+                if PreferencesUserDefault().openLinkSetting() {
+                    NSWorkspace.shared.open(url)
+                } else {
+                    let wc = WebWindowController.create(initialUrl: url, initialSize: view.bounds.size)
+                    wc.showWindow(self)
+                }
+            }
+        }
+    }
+
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         guard let keyPath = keyPath, let _webView = webView else {
             return
