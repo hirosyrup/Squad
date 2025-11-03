@@ -6,21 +6,12 @@ struct SquadApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
-        Group {
-            if #available(macOS 13.0, *) {
-                MenuBarExtra("Squad", image: Image("menu_bar_icon")) {
-                    MenuBarContent(appDelegate: appDelegate)
-                }
-            } else {
-                WindowGroup(id: "legacyStatusItem") {
-                    LegacyStatusItemPlaceholder()
-                }
-            }
+        MenuBarExtra("Squad", image: Image("menu_bar_icon")) {
+            MenuBarContent(appDelegate: appDelegate)
         }
     }
 }
 
-@available(macOS 13.0, *)
 private struct MenuBarContent: View {
     @State private var isWindowVisible = false
     private let appDelegate: AppDelegate
@@ -49,15 +40,5 @@ private struct MenuBarContent: View {
     private func toggleWindow() {
         appDelegate.toggleMainWindow()
         isWindowVisible = appDelegate.isMainWindowVisible
-    }
-}
-
-private struct LegacyStatusItemPlaceholder: View {
-    var body: some View {
-        Color.clear
-            .frame(width: 1, height: 1)
-            .onAppear {
-                NSApplication.shared.hide(nil)
-            }
     }
 }
