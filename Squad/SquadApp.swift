@@ -6,6 +6,7 @@ struct SquadApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
+        // macOS 13.0 以降のみをサポートしているため、フォールバックは不要
         MenuBarExtra("Squad", image: Image("menu_bar_icon")) {
             MenuBarContent(appDelegate: appDelegate)
         }
