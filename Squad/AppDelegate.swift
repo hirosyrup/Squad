@@ -7,46 +7,50 @@
 
 import Cocoa
 
-@main
-class AppDelegate: NSObject, NSApplicationDelegate {
-    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private let mainWindowVc = MainWindowController.create()
-    
+final class AppDelegate: NSObject, NSApplicationDelegate {
+    private lazy var mainWindowController = MainWindowController.create()
+    private lazy var statusItemController: StatusItemController = {
+        let controller = StatusItemController()
+        controller.onClick = { [weak self] in
+            self?.toggleMainWindow()
+        }
+        return controller
+    }()
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        if let button = statusItem.button {
-            button.image = NSImage(named:NSImage.Name("menu_bar_icon"))
-            button.imagePosition = .imageLeft
-            button.action = #selector(onClick(_:))
+        if #available(macOS 13.0, *) {
+            statusItemController.deactivate()
+        } else {
+            statusItemController.activate()
         }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        statusItemController.deactivate()
     }
-    
-    private func show() {
-        mainWindowVc.showWindow(self)
+
+    func toggleMainWindow() {
+        if isMainWindowVisible {
+            hideMainWindow()
+        } else {
+            showMainWindow()
+        }
+    }
+
+    func showMainWindow() {
+        mainWindowController.showWindow(self)
         let app = NSApplication.shared
         app.activate(ignoringOtherApps: true)
         app.windows.forEach { window in
             window.makeKeyAndOrderFront(app)
         }
     }
-    
-    private func hide() {
+
+    func hideMainWindow() {
         NSApplication.shared.hide(self)
     }
-    
-    private func hasVisibleWindow() -> Bool {
-        return NSApplication.shared.windows.filter{$0.canHide && $0.isVisible}.count > 0
-    }
 
-    @objc func onClick(_ sender: Any?) {
-        if hasVisibleWindow() {
-            hide()
-        } else {
-            show()
-        }
+    var isMainWindowVisible: Bool {
+        NSApplication.shared.windows.filter { $0.canHide && $0.isVisible }.count > 0
     }
 }
-

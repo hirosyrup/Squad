@@ -27,6 +27,8 @@
 		FB631FBA26C910BA005EC13F /* TabSettingRowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB631FB926C910BA005EC13F /* TabSettingRowPresenter.swift */; };
 		FB700AA426D28014000CE4B2 /* NSViewController+RightClickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB700AA326D28014000CE4B2 /* NSViewController+RightClickMenu.swift */; };
 		FB700AA726D28619000CE4B2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB700AA626D28619000CE4B2 /* AboutViewController.swift */; };
+		F534BCF422A74518AF6ED3B5 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB91AE7ECF94CD3935DF7A8 /* StatusItemController.swift */; };
+		41925EDBD3CF49E38CBF2775 /* SquadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1CF88A0784A1497B3EE6A /* SquadApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		FB631FB926C910BA005EC13F /* TabSettingRowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSettingRowPresenter.swift; sourceTree = "<group>"; };
 		FB700AA326D28014000CE4B2 /* NSViewController+RightClickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+RightClickMenu.swift"; sourceTree = "<group>"; };
 		FB700AA626D28619000CE4B2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		ADB91AE7ECF94CD3935DF7A8 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		96E1CF88A0784A1497B3EE6A /* SquadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,9 @@
 				FB631FAD26C9046D005EC13F /* Model */,
 				FB0D44C126C00E3100224267 /* ViewController */,
 				FB0D44CE26C178DA00224267 /* View */,
+		96E1CF88A0784A1497B3EE6A /* SquadApp.swift */,
 				FB0D44B126C00A7500224267 /* AppDelegate.swift */,
+		ADB91AE7ECF94CD3935DF7A8 /* StatusItemController.swift */,
 				FB0D44B526C00A7600224267 /* Assets.xcassets */,
 				FB0D44B726C00A7600224267 /* Main.storyboard */,
 				FB0D44BA26C00A7600224267 /* Info.plist */,
@@ -308,7 +314,9 @@
 				FB0D44CD26C16DA400224267 /* WebViewController.swift in Sources */,
 				FB631FA726C8F6BE005EC13F /* PreferencesWindowController.swift in Sources */,
 				FB631FA226C8B739005EC13F /* MainWindowController.swift in Sources */,
+		F534BCF422A74518AF6ED3B5 /* StatusItemController.swift in Sources */,
 				FB0D44B226C00A7500224267 /* AppDelegate.swift in Sources */,
+		41925EDBD3CF49E38CBF2775 /* SquadApp.swift in Sources */,
 				FB631FAC26C901B4005EC13F /* TabSettingInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -433,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -460,7 +468,7 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.koalab.Squad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 			};
 			name = Debug;
 		};
@@ -482,7 +490,7 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.koalab.Squad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 			};
 			name = Release;
 		};
