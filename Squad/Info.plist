@@ -38,8 +38,6 @@
 	<string>Use on web services that needs to use the location data.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Use on web services that needs to use the location data.</string>
-	<key>NSMainStoryboardFile</key>
-	<string>Main</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Use on web services that needs to use the microphone.</string>
 	<key>NSPrincipalClass</key>
